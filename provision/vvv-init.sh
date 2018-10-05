@@ -15,6 +15,8 @@ echo -e "\n DB operations done.\n\n"
 
 # Public_html folder
 mkdir -p ${VVV_PATH_TO_SITE}/public_html
+touch ${VVV_PATH_TO_SITE}/public_html/index.php
+echo "<?php phpinfo(); ?>" >> ${VVV_PATH_TO_SITE}/public_html/index.php
 
 # Nginx Logs
 mkdir -p ${VVV_PATH_TO_SITE}/log
