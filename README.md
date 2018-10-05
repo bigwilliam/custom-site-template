@@ -4,11 +4,6 @@ For when you just need a simple dev site, PHP. WordPress has been removed for th
 ## Overview
 This template will allow you to create a plain PHP dev environment using only `vvv-custom.yml`.
 
-The supported environments are:
-- A single site
-- A subdomain multisite
-- A subdirectory multisite
-
 # Configuration
 
 ### The minimum required configuration:
@@ -16,9 +11,11 @@ The supported environments are:
 ```
 my-site:
   repo: https://github.com/Varying-Vagrant-Vagrants/custom-vvv-php
+  nginx_upstream: php72
   hosts:
     - my-site.test
 ```
+
 | Setting    | Value       |
 |------------|-------------|
 | Domain     | my-site.test |
