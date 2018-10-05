@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Provision WordPress Stable
+# Provision PHP Blank Site
 
 DOMAIN=`get_primary_host "${VVV_SITE_NAME}".test`
 DOMAINS=`get_hosts "${DOMAIN}"`
@@ -10,8 +10,11 @@ DB_NAME=${DB_NAME//[\\\/\.\<\>\:\"\'\|\?\!\*-]/}
 # Make a database, if we don't already have one
 echo -e "\nCreating database '${DB_NAME}' (if it's not already there)"
 mysql -u root --password=root -e "CREATE DATABASE IF NOT EXISTS ${DB_NAME}"
-mysql -u root --password=root -e "GRANT ALL PRIVILEGES ON ${DB_NAME}.* TO wp@localhost IDENTIFIED BY 'wp';"
+mysql -u root --password=root -e "GRANT ALL PRIVILEGES ON ${DB_NAME}.* TO php@localhost IDENTIFIED BY 'php';"
 echo -e "\n DB operations done.\n\n"
+
+# Public_html folder
+mkdir -p ${VVV_PATH_TO_SITE}/public_html
 
 # Nginx Logs
 mkdir -p ${VVV_PATH_TO_SITE}/log
