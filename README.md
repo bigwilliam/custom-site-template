@@ -1,5 +1,5 @@
 # VVV site template for PHP apps
-For when you just need a simple dev site, PHP. WordPress has been removed for this one.
+For when you just need a simple dev site, for PHP. Also sets up SSL if config has it turned on.
 
 ## Overview
 This template will allow you to create a plain PHP dev environment using only `vvv-custom.yml`.
